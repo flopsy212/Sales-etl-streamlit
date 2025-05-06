@@ -51,6 +51,9 @@ def main():
 
     print("出力完了：data/normalized_sales.csv")
     print("先頭5行:\n", merged.head())
+    print(merged.head())  # データの先頭5行を表示
 
 if __name__ == '__main__':
     main()
+    print("✅ 処理完了！normalized_sales.csv を出力しました。")
+

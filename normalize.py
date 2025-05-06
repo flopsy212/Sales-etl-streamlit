@@ -5,10 +5,10 @@ import os
 def normalize_file(filepath, store_name):
     df = pd.read_csv(filepath)
 
-    # カラム名統一
+    # カラム名を小文字＋前後の空白を削除
     df.columns = [col.strip().lower() for col in df.columns]
 
-    # カラム名マッピング（仮例）
+    # カラム名の変換マップ
     col_map = {
         'item': 'item_name',
         '商品名': 'item_name',
@@ -21,22 +21,23 @@ def normalize_file(filepath, store_name):
     }
     df = df.rename(columns=col_map)
 
-    # 商品名の表記統一（仮例）
+    # 商品名の統一（仮）
     df['item_name'] = df['item_name'].replace({
         'tshirt': 'Tシャツ',
         'Tシャツ': 'Tシャツ',
         'シャツ': 'Tシャツ'
     })
 
-    # 日付形式統一
+    # 日付を YYYY-MM-DD 形式に変換
     df['sale_date'] = pd.to_datetime(df['sale_date'], errors='coerce').dt.strftime('%Y-%m-%d')
 
-    # 店舗名追加
+    # 店舗名列を追加
     df['store_name'] = store_name
 
     return df[['sale_date', 'item_name', 'quantity', 'unit_price', 'store_name']]
 
 def main():
+    print("処理スタート")
     csv_files = glob.glob('data/*.csv')
     all_data = []
 
@@ -48,10 +49,8 @@ def main():
     merged = pd.concat(all_data, ignore_index=True)
     merged.to_csv('data/normalized_sales.csv', index=False)
 
+    print("出力完了：data/normalized_sales.csv")
+    print("先頭5行:\n", merged.head())
+
 if __name__ == '__main__':
     main()
-
-print("処理スタート")
-print("出力先：data/normalized_sales.csv")
-print(df_all.head())  # データの先頭確認
-

@@ -37,7 +37,6 @@ def normalize_file(filepath, store_name):
     return df[['sale_date', 'item_name', 'quantity', 'unit_price', 'store_name']]
 
 def main():
-    print("処理スタート")
     csv_files = glob.glob('data/*.csv')
     all_data = []
 
@@ -49,9 +48,10 @@ def main():
     merged = pd.concat(all_data, ignore_index=True)
     merged.to_csv('data/normalized_sales.csv', index=False)
 
-    print("出力完了：data/normalized_sales.csv")
-    print("先頭5行:\n", merged.head())
-    print(merged.head())  # データの先頭5行を表示
+    # 追加（中身確認用）
+    print("✅ データ結合完了！")
+    print(merged.head())
+
 
 if __name__ == '__main__':
     main()

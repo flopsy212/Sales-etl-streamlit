@@ -48,10 +48,9 @@ def main():
     merged = pd.concat(all_data, ignore_index=True)
     merged.to_csv('data/normalized_sales.csv', index=False)
 
-    # 追加（中身確認用）
+    # ✅ ここで print する！
     print("✅ データ結合完了！")
-    print(merged.head())
-
+    print(merged.head())  # ← ここ大事！
 
 if __name__ == '__main__':
     main()

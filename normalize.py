@@ -50,3 +50,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+print("読み込み成功", df_a.shape, df_b.shape)

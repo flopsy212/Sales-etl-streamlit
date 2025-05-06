@@ -37,6 +37,8 @@ def normalize_file(filepath, store_name):
     return df[['sale_date', 'item_name', 'quantity', 'unit_price', 'store_name']]
 
 def main():
+    print("🔥 スクリプト開始")  # ← 開始確認
+
     csv_files = glob.glob('data/*.csv')
     all_data = []
 
@@ -48,16 +50,15 @@ def main():
     merged = pd.concat(all_data, ignore_index=True)
     merged.to_csv('data/normalized_sales.csv', index=False)
 
-    # ✅ ここで print する！
     print("✅ データ結合完了！")
-    print(merged.head())  # ← ここ大事！
+    print(merged.head())  # ← 中身確認
+    print("✅ 処理完了！normalized_sales.csv を出力しました。")
 
 if __name__ == '__main__':
     try:
-        print("🔥 スクリプト開始")  # ← これ絶対入れて
         main()
-        print("✅ 処理完了！normalized_sales.csv を出力しました。")
     except Exception as e:
         print("❌ エラーが発生しました:", e)
+
 
 

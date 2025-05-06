@@ -51,4 +51,7 @@ def main():
 if __name__ == '__main__':
     main()
 
-print("読み込み成功", df_a.shape, df_b.shape)
+print("処理スタート")
+print("出力先：data/normalized_sales.csv")
+print(df_all.head())  # データの先頭確認
+

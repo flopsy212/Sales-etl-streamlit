@@ -3,7 +3,7 @@ import glob
 import os
 
 def normalize_file(filepath, store_name):
-    df = pd.read_csv(filepath, encoding='utf-8-sig')
+    df = pd.read_csv(filepath, encoding='utf-8', quotechar='"')  
 
     df.columns = [col.strip().lower() for col in df.columns]
 

@@ -54,8 +54,10 @@ def main():
 
 if __name__ == '__main__':
     try:
+        print("🔥 スクリプト開始")  # ← これ絶対入れて
         main()
         print("✅ 処理完了！normalized_sales.csv を出力しました。")
     except Exception as e:
         print("❌ エラーが発生しました:", e)
+
 

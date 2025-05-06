@@ -53,6 +53,9 @@ def main():
     print(merged.head())  # ← ここ大事！
 
 if __name__ == '__main__':
-    main()
-    print("✅ 処理完了！normalized_sales.csv を出力しました。")
+    try:
+        main()
+        print("✅ 処理完了！normalized_sales.csv を出力しました。")
+    except Exception as e:
+        print("❌ エラーが発生しました:", e)
 

@@ -35,8 +35,10 @@ def normalize_file(filepath, store_name):
 def main():
     print("🔥 スクリプト開始")
 
+    os.makedirs('data', exist_ok=True)
+
     csv_files = glob.glob('data/*.csv')
-    print(f"📁 CSVファイル一覧: {csv_files}")
+    print(f"📁 CSVファイル一覧: {csv_files}")  # ← この出力が出るか見る
 
     if not csv_files:
         print("⚠️ CSVファイルが見つかりません！")

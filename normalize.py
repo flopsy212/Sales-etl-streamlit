@@ -3,7 +3,8 @@ import glob
 import os
 
 def normalize_file(filepath, store_name):
-    df = pd.read_csv(filepath, encoding='utf-8', quotechar='"')  
+    df = pd.read_csv(filepath, encoding='utf-8-sig', quotechar='"')  
+    print("📤 ファイル読み込み直後:\n", df.head())  
 
     df.columns = [col.strip().lower() for col in df.columns]
 
@@ -47,6 +48,7 @@ def main():
         store = os.path.basename(file).split('_')[1]
         df = normalize_file(file, f'store_{store}')
         all_data.append(df)
+        print("📤 正規化後:\n", df[['sale_date', 'item_name', 'quantity', 'unit_price', 'store_name']].head())
 
     merged = pd.concat(all_data, ignore_index=True)
     output_path = os.path.join(os.getcwd(), 'data', 'normalized_sales.csv')

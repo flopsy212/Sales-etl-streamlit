@@ -37,8 +37,13 @@ def main():
     csv_files = glob.glob('data/*.csv')
     print(f"📁 CSVファイル一覧: {csv_files}")
 
+    if not csv_files:
+        print("⚠️ CSVファイルが見つかりません！")
+        return
+
     all_data = []
     for file in csv_files:
+        print(f"📄 処理中: {file}")
         store = os.path.basename(file).split('_')[1]
         df = normalize_file(file, f'store_{store}')
         all_data.append(df)

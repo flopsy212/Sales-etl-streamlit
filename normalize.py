@@ -53,8 +53,9 @@ def main():
         print("📤 正規化後:\n", df[['sale_date', 'item_name', 'quantity', 'unit_price', 'store_name']].head())
 
     merged = pd.concat(all_data, ignore_index=True)
-    output_path = os.path.join(os.getcwd(), 'data', 'normalized_sales.csv')
+    output_path = os.path.join('data', 'normalized_sales.csv')
     merged.to_csv(output_path, index=False)
+    print("📝 正常に書き出しました:", output_path)
 
     print("✅ 結合完了！")
     print("📝 出力先:", output_path)

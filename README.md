@@ -48,20 +48,23 @@ graph TD
     E --> F[Streamlitで読み込み]
     F --> G[Webで表示・分析]
 ```
-🚀 実行方法
-1. リポジトリをクローン
+## 🚀 実行方法
+# 1. リポジトリをクローン
 git clone https://github.com/flopsy212/Sales-etl-streamlit.git
 cd Sales-etl-streamlit
 
-2. ライブラリをインストール
+# 2. 必要なライブラリをインストール
 pip install -r requirements.txt
 
-3. データ整形とDB格納
+# 3. データ整形（CSV → 正規化CSV）
 python normalize.py
+
+# 4. SQLiteデータベースへの格納
 python etl.py
 
-4. Streamlitアプリの起動
+# 5. Streamlitアプリを起動
 streamlit run app.py
+
 
 📷 アプリ画面イメージ
 ![image](https://github.com/user-attachments/assets/ab39ccd4-9124-4059-b3f9-97d6d8360444)

@@ -47,7 +47,7 @@ graph TD
     D --> E[sales.db（3テーブル）]
     E --> F[Streamlitで読み込み]
     F --> G[Webで表示・分析]
-
+```
 🚀 実行方法
 1. リポジトリをクローン
 git clone https://github.com/flopsy212/Sales-etl-streamlit.git

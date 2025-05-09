@@ -77,3 +77,4 @@ Airflow等を使ったETLの自動化・定期実行
 
 KPI可視化・多角的分析への拡張
 
+[GitHubプロフィール](https://github.com/flopsy212)

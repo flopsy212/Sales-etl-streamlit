@@ -7,87 +7,82 @@ Streamlitで可視化することで、**非エンジニアでも売上状況を
 
 ## 📌 背景と目的
 
-- 各店舗の売上CSVが**日付・列名・商品名表記などバラバラ**
-- Excelでの手作業が多く、**集計や報告に時間がかかっていた**
-- **整形 → 格納 → 可視化**の流れを自動化し、属人化を解消したい
-
----
-
-## 💡 解決したこと
-
-- 列名や商品名の**表記ゆれを統一**
-- SQLiteへ格納し、**JOINしやすいスキーマで構造化**
-- Streamlitで**直感的に売上データを可視化**
+- 各店舗の売上CSVが日付・列名・商品名表記などバラバラ  
+- Excelでの手作業が多く、集計や報告に時間がかかっていた  
+- 「整形 → 格納 → 可視化」の流れを自動化し、属人化を解消
 
 ---
 
 ## 🛠 使用技術
 
-| 処理 | 技術 |
-|------|------|
-| データ整形 | Python（pandas） |
-| DB格納 | SQLite（schema.sql） |
-| 可視化 | Streamlit / Altair |
-| スクリプト管理 | GitHub / Mermaid（構成図） |
+- Python（pandas）
+- SQLite
+- Streamlit
+- Altair
+- Mermaid（構成図作成）
 
 ---
 
 ## 📁 ディレクトリ構成
 
-ec_sales_pipeline/
-├── data/ # 店舗別の生CSV
-├── db/ # SQLiteデータ
-├── normalize.py # 正規化処理
-├── etl.py # DB格納処理
+Sales-etl-streamlit/
+├── data/ # 元データCSV格納用
+├── db/ # SQLite DB格納先
+├── normalize.py # CSV整形スクリプト
+├── etl.py # DB格納スクリプト
 ├── app.py # Streamlitアプリ
-├── schema.sql # テーブル定義
-├── README.md
-├── requirements.txt
-└── .gitignore
+├── requirements.txt # 使用ライブラリ一覧
+└── README.md # 本ドキュメント
+
+
 ---
 
-## 🚀 実行方法
+## 🔄 処理フロー
 
-```bash
-# 1. 正規化
+```mermaid
+graph TD
+    A[CSVファイル] --> B[normalize.py（整形処理）]
+    B --> C[normalized_sales.csv]
+    C --> D[etl.pyでDB格納]
+    D --> E[sales.db（3テーブル）]
+    E --> F[Streamlitで読み込み]
+    F --> G[Webで表示・分析]
+
+🚀 実行方法
+リポジトリをクローン
+
+git clone https://github.com/flopsy212/Sales-etl-streamlit.git
+cd Sales-etl-streamlit
+ライブラリをインストール
+
+
+pip install -r requirements.txt
+データ整形とDB格納
+
+
 python normalize.py
-
-# 2. SQLiteへ格納
 python etl.py
+Streamlitアプリの起動
 
-# 3. Webで可視化
+
 streamlit run app.py
-```
+📷 アプリ画面イメージ
+（スクリーンショットやGIFをここに貼ってください）
 
-## 📷 アプリ画面イメージ（例）
-📊 商品別売上のAltairグラフ
+✍ Qiita記事（詳細解説）
+Qiita記事はこちら
 
-## 📍 店舗ごとのフィルター機能付き表
-※ スクリーンショットは後から貼り付けてください
+💬 今後の展望
+データ量増加に対応できるDWH（BigQuery等）への移行
 
-## 🧠 工夫・学び・つまずいた点
-T-shirt／シャツなど同義表現の自動統一（マッピング処理）
+Airflow等を使ったETLの自動化・定期実行
 
-正規化されたDBスキーマ設計の基礎
+KPI可視化・多角的分析への拡張
 
-StreamlitでのUI設計（営業や上司に見せやすい画面づくり）
+🧑‍💻 作者情報
+flopsy_tech
+業務改善・自動化に関心を持ち、VBAやPythonで業務効率化を経験。
+現在はデータエンジニア志望として、データ基盤やパイプライン構築に注力中。
 
-「データを“整える”ことの意味」を実感
-
-## 💼 想定ユースケース
-店舗別の売上を社内で毎週共有したいとき
-
-営業・販促担当が非エンジニアでもデータを確認したいとき
-
-バラバラなCSVを定期的に整備・保存したいとき
-
-## 🔮 今後の展望
-Altairでの色分け・インサイト表示の強化
-
-日付フィルターや期間指定機能の追加
-
-GitHub Actionsで定期実行（週次バッチ処理）
-
-👉 解説記事はこちら：[Qiitaリンク](https://qiita.com/flopsy_tech/items/def6a3f746bfd440c3f6)
 
 

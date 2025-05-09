@@ -70,3 +70,10 @@ streamlit run app.py
 ✍ Qiita記事（詳細解説）
 [Qiita記事はこちら](https://qiita.com/flopsy_tech/items/def6a3f746bfd440c3f6)
 
+💬 今後の展望
+データ量増加に対応できるDWH（BigQuery等）への移行
+
+Airflow等を使ったETLの自動化・定期実行
+
+KPI可視化・多角的分析への拡張
+

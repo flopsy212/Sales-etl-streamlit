@@ -83,7 +83,8 @@ python etl.py
 streamlit run app.py
 ```
 
-📷 アプリ画面イメージ
+## 📷 アプリ画面イメージ
+
 ![アプリ画面1](https://github.com/user-attachments/assets/ab39ccd4-9124-4059-b3f9-97d6d8360444)
 
 ![アプリ画面2](https://github.com/user-attachments/assets/309b3da5-5751-4347-9223-aad40431fa88)

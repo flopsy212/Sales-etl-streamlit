@@ -1,7 +1,12 @@
 # 🧾 売上データETL＋可視化パイプライン
 
 複数店舗から届く形式バラバラな売上CSVを自動で整形・統合し、SQLiteに格納。  
+非エンジニアでも使える、**売上CSVの整形〜可視化**を1クリックで実現する軽量ETLダッシュボード。
 Streamlitで可視化することで、**非エンジニアでも売上状況を簡単に確認できるWebアプリ**を構築しました。
+
+![Python](https://img.shields.io/badge/python-3.10-blue)
+![Streamlit](https://img.shields.io/badge/streamlit-%E2%AD%90-red)
+![SQLite](https://img.shields.io/badge/sqlite-db-lightgrey)
 
 ---
 
@@ -49,6 +54,7 @@ graph TD
     E --> F[Streamlitで読み込み]
     F --> G[Webで表示・分析]
 ```
+
 ## 🚀 実行方法
  1. リポジトリをクローン
 git clone https://github.com/flopsy212/Sales-etl-streamlit.git
@@ -68,15 +74,23 @@ streamlit run app.py
 
 
 📷 アプリ画面イメージ
-![アプリ画面]![image](https://github.com/user-attachments/assets/ab39ccd4-9124-4059-b3f9-97d6d8360444)
-![アプリ画面]![image](https://github.com/user-attachments/assets/309b3da5-5751-4347-9223-aad40431fa88)
+<!-- 現状 -->
+(https://github.com/user-attachments/assets/ab39ccd4-9124-4059-b3f9-97d6d8360444)
+
+
+<!-- 改善案　-->
+(https://github.com/user-attachments/assets/309b3da5-5751-4347-9223-aad40431fa88)
 
 
 ✍ Qiita記事（詳細解説）
 [Qiita記事はこちら](https://qiita.com/flopsy_tech/items/def6a3f746bfd440c3f6)
 
-💬 今後の展望
-データ量増加に対応できるDWH（BigQuery等）への移行
+## 💬 今後の展望
+
+- ✅ **DWH対応（BigQueryなど）**
+- 🔄 **ETL自動化（Airflow）**
+- 📊 **KPIやダッシュボード拡張**
+
 
 Airflow等を使ったETLの自動化・定期実行
 

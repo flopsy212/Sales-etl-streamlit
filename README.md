@@ -56,8 +56,9 @@ graph TD
 ```
 
 ## 🚀 実行方法
+
  1. リポジトリをクローン
-```mermaid
+```bash
 git clone https://github.com/flopsy212/Sales-etl-streamlit.git
 cd Sales-etl-streamlit
 ```

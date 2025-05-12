@@ -31,15 +31,18 @@ Streamlitで可視化することで、**非エンジニアでも売上状況を
 
 ## 📁 ディレクトリ構成
 
-Sales-etl-streamlit/
-├── data/ # 元データCSV格納用
-├── db/ # SQLite DB格納先
-├── normalize.py # CSV整形スクリプト
-├── etl.py # DB格納スクリプト
-├── app.py # Streamlitアプリ
-├── requirements.txt # 使用ライブラリ一覧
-└── README.md # 本ドキュメント
+## 📁 ディレクトリ構成
 
+```plaintext
+Sales-etl-streamlit/
+├── data/            # 元データCSV格納用
+├── db/              # SQLite DB格納先
+├── normalize.py     # CSV整形スクリプト
+├── etl.py           # DB格納スクリプト
+├── app.py           # Streamlitアプリ
+├── requirements.txt # 使用ライブラリ一覧
+└── README.md        # 本ドキュメント
+```
 
 ---
 

@@ -31,8 +31,6 @@ Streamlitで可視化することで、**非エンジニアでも売上状況を
 
 ## 📁 ディレクトリ構成
 
-## 📁 ディレクトリ構成
-
 ```plaintext
 Sales-etl-streamlit/
 ├── data/            # 元データCSV格納用

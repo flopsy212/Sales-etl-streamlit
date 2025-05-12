@@ -57,29 +57,35 @@ graph TD
 
 ## 🚀 実行方法
  1. リポジトリをクローン
+```mermaid
 git clone https://github.com/flopsy212/Sales-etl-streamlit.git
 cd Sales-etl-streamlit
+```
 
  2. 必要なライブラリをインストール
+  ```
 pip install -r requirements.txt
+```
 
  3. データ整形（CSV → 正規化CSV）
+ ```
 python normalize.py
+```
 
  4. SQLiteデータベースへの格納
+```
 python etl.py
+```
 
  5. Streamlitアプリを起動
+```
 streamlit run app.py
-
+```
 
 📷 アプリ画面イメージ
-<!-- 現状 -->
-(https://github.com/user-attachments/assets/ab39ccd4-9124-4059-b3f9-97d6d8360444)
+![アプリ画面1](https://github.com/user-attachments/assets/ab39ccd4-9124-4059-b3f9-97d6d8360444)
 
-
-<!-- 改善案　-->
-(https://github.com/user-attachments/assets/309b3da5-5751-4347-9223-aad40431fa88)
+![アプリ画面2](https://github.com/user-attachments/assets/309b3da5-5751-4347-9223-aad40431fa88)
 
 
 ✍ Qiita記事（詳細解説）
@@ -90,10 +96,5 @@ streamlit run app.py
 - ✅ **DWH対応（BigQueryなど）**
 - 🔄 **ETL自動化（Airflow）**
 - 📊 **KPIやダッシュボード拡張**
-
-
-Airflow等を使ったETLの自動化・定期実行
-
-KPI可視化・多角的分析への拡張
 
 [GitHubプロフィール](https://github.com/flopsy212)

@@ -1,8 +1,8 @@
-# 🧾 売上データETL＋可視化パイプライン
+# 🧾 売上データETL＋可視化パイプライン｜非エンジニアでも使える売上分析ツール
 
-複数店舗から届く形式バラバラな売上CSVを自動で整形・統合し、SQLiteに格納。  
-非エンジニアでも使える、**売上CSVの整形〜可視化**を1クリックで実現する軽量ETLダッシュボード。
-Streamlitで可視化することで、**非エンジニアでも売上状況を簡単に確認できるWebアプリ**を構築しました。
+複数店舗から届くバラバラな形式の売上CSVを自動で整形・統合し、SQLiteに格納。
+非エンジニアでも1クリックで売上分析ができる軽量ダッシュボードを構築しました。
+StreamlitによるWeb可視化で、現場でもすぐに活用できる仕組みを実現しています。
 
 ![Python](https://img.shields.io/badge/python-3.10-blue)
 ![Streamlit](https://img.shields.io/badge/streamlit-%E2%AD%90-red)
@@ -13,16 +13,17 @@ Streamlitで可視化することで、**非エンジニアでも売上状況を
 ## 📌 背景と目的
 
 ### 💡 課題
-- 小売や飲食など複数店舗の売上集計では、提出されるCSV形式がバラバラ（列名、日付形式、商品名の表記ゆれなど）。
-- 毎回Excelで手作業による整形・集計が必要となり、30分以上の時間と属人性が発生。
+- 小売・飲食業など、複数店舗の売上集計ではCSV形式が統一されておらず、列名・日付形式・商品名にバラつきが生じやすい。
+- 毎回Excelでの整形・集計作業が発生し、1ファイルにつき30分以上の作業時間と属人化が課題に。
 
 ### 🔧 解決アプローチ
-- PythonスクリプトでCSVを自動整形・正規化し、SQLiteに格納。
-- Streamlitで可視化することで、**非エンジニアでも分析できるUI**を提供。
+- PythonスクリプトでCSVを自動整形・正規化し、SQLiteへ格納。
+- Streamlitを使ってWebアプリ化することで、非エンジニアでも分析可能なUIを提供。
 
 ### ✅ 成果
-- 毎回30分以上かかっていた作業を数秒に短縮。
-- 手作業によるミス削減、業務の標準化・効率化に成功。
+- 作業時間を30分 → 数秒に短縮。
+- 手作業ミスを削減し、誰でも同じ処理ができるよう業務を標準化。
+- 分析環境をコードレスで提供し、店舗側でも売上状況を可視化可能に。
 
 ---
 
@@ -51,7 +52,7 @@ Sales-etl-streamlit/
 
 ---
 
-## 🔄 処理フロー
+## 🔄 ETL処理フロー
 
 ```mermaid
 graph TD
@@ -63,21 +64,22 @@ graph TD
     F --> G[Webで表示・分析]
 ```
 
-## 🚀 実行方法
+## 🚀 実行方法（ローカル環境）
 
- 1. リポジトリをクローン
-```bash
+1. リポジトリをクローン
+
+```bash<br>git clone ...
 git clone https://github.com/flopsy212/Sales-etl-streamlit.git
 cd Sales-etl-streamlit
 ```
 
- 2. 必要なライブラリをインストール
+2. ライブラリをインストール 
   ```
 pip install -r requirements.txt
 ```
 
- 3. データ整形（CSV → 正規化CSV）
- ```
+3. データ整形（CSV → 正規化CSV）
+```
 python normalize.py
 ```
 
@@ -98,17 +100,14 @@ streamlit run app.py
 ![アプリ画面2](https://github.com/user-attachments/assets/309b3da5-5751-4347-9223-aad40431fa88)
 
 
-✍ Qiita記事（詳細解説）
-[Qiita記事はこちら](https://qiita.com/flopsy_tech/items/def6a3f746bfd440c3f6)
-
 ## 💬 今後の展望
 
-- ✅ **DWH対応（BigQueryなど）**
-- 🔄 **ETL自動化（Airflow）**
-- 📊 **KPIやダッシュボード拡張**
-- 📡 API連携による外部データ取り込み
-- ☁️ クラウド対応（AWS Lambda や GCS などでの自動実行）
-- 🧠 シンプルな売上予測モデルの実装（scikit-learn など）
+- ✅ DWH対応（BigQueryなど）
+- 🔄 ETL自動化（Airflow、Cron）
+- 📊 KPI・ランキング分析などダッシュボード拡張
+- 📡 API連携でPOSデータ等の外部データ取り込み
+- ☁️ クラウド環境対応（AWS Lambda / GCSなど）
+- 🧠 売上予測モデルの実装（scikit-learn）
 
-
+[Qiita記事](https://qiita.com/flopsy_tech/items/def6a3f746bfd440c3f6)
 [GitHubプロフィール](https://github.com/flopsy212)

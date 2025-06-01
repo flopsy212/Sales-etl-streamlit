@@ -105,9 +105,9 @@ streamlit run app.py
 - DWH対応（BigQueryなど）
 - ETL自動化（Airflow、Cron）
 - KPI・ランキング分析などダッシュボード拡張
-📡 API連携でPOSデータ等の外部データ取り込み
-☁️ クラウド環境対応（AWS Lambda / GCSなど）
-🧠 売上予測モデルの実装（scikit-learn）
+- API連携でPOSデータ等の外部データ取り込み
+- クラウド環境対応（AWS Lambda / GCSなど）
+- 売上予測モデルの実装（scikit-learn）
 
 [Qiita記事](https://qiita.com/flopsy_tech/items/def6a3f746bfd440c3f6)
 [GitHubプロフィール](https://github.com/flopsy212)

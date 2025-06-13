@@ -115,7 +115,7 @@ streamlit run app.py
 
 UIイメージ
 
-## 🏗構成図
+## 構成図
 
 ```mermaid
 graph TD

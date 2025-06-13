@@ -113,7 +113,6 @@ streamlit run app.py
 
 ![アプリ画面2](https://github.com/user-attachments/assets/309b3da5-5751-4347-9223-aad40431fa88)
 
-UIイメージ
 
 ## 構成図
 

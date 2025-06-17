@@ -3,7 +3,6 @@ import glob
 import os
 
 
-
 def normalize_file(filepath, store_name):
     df = pd.read_csv(filepath, encoding='utf-8-sig', quotechar='"')  
     print("ファイル読み込み直後:\n", df.head())  

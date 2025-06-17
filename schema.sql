@@ -2,7 +2,7 @@
 CREATE TABLE stores (
     store_id INTEGER PRIMARY KEY AUTOINCREMENT,
     store_name TEXT NOT NULL,
-    
+
     raw_name TEXT
 );
 

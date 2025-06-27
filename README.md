@@ -7,6 +7,7 @@
 非エンジニアでも1クリックで売上分析ができる軽量ダッシュボードを構築しました。
 StreamlitによるWeb可視化で、現場でもすぐに活用できる仕組みを実現しています。
 
+
 ![Python](https://img.shields.io/badge/python-3.10-blue)
 ![Streamlit](https://img.shields.io/badge/streamlit-%E2%AD%90-red)
 ![SQLite](https://img.shields.io/badge/sqlite-db-lightgrey)

@@ -25,3 +25,4 @@ CREATE TABLE sales (
     FOREIGN KEY (store_id) REFERENCES stores(store_id),
     FOREIGN KEY (item_id) REFERENCES items(item_id)
 );
+
